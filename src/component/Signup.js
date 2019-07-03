@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
+import {postSignup} from '../adapter/UserAdapter.js'
 
 class Signup extends Component {
   state = {
@@ -15,7 +18,7 @@ class Signup extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    console.log('submit')
+    this.props.postSignup(this.state)
   }
 
   render() {
@@ -30,4 +33,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup
+export default connect(null, {postSignup})(Signup)
