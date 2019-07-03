@@ -9,10 +9,12 @@ import {BrowserRouter} from 'react-router-dom';
 import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import thunk from 'redux-thunk';
 
-import userReducer from './reducer/UserReducer.js'
+import userReducer from './reducer/UserReducer.js';
+import journalReducer from './reducer/JournalReducer.js';
 
+const rootReducer = combineReducers({user: userReducer, journal: journalReducer});
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(userReducer, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <BrowserRouter>

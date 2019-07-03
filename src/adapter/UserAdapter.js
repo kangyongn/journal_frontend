@@ -1,4 +1,5 @@
 import {saveUserToState, saveTokenToState} from '../action/UserAction.js';
+import {saveJournalsToState} from '../action/JournalAction.js';
 
 export const postSignup = user => {
   return (dispatch) => {
@@ -35,6 +36,7 @@ export const postLogin = user => {
       if (info.jwt) {
         dispatch(saveUserToState(info.user))
         dispatch(saveTokenToState(info.jwt))
+        dispatch(saveJournalsToState(info.journals))
       }
     })
   }

@@ -1,6 +1,6 @@
 const initialState = {
   id: 0,
-  token: ''
+  token: '',
 }
 
 const userReducer = (state = initialState, action) => {
@@ -16,6 +16,12 @@ const userReducer = (state = initialState, action) => {
         ...state,
         token: action.payload
       }
+
+    case 'REMOVE_USER_FROM_STATE':
+      return initialState
+
+    default:
+      return state
   }
 }
 
