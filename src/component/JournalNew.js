@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {postJournal} from '../adapter/JournalAdapter.js'
 
-class JournalNew extends Component {
+class New extends Component {
   state = {
     content: ''
   }
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {postJournal})(JournalNew)
+export default connect(mapStateToProps, {postJournal})(New)

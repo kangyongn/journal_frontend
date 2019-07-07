@@ -1,9 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import JournalView from '../component/JournalView.js';
+
 const Journal = props => {
+  const mapJournals = props.all.map(journal => {
+    return (
+      <JournalView content={journal.content}/>
+    )
+  })
+
   return (
-    <h1>{props.all.length}</h1>
+    mapJournals
   )
 }
 

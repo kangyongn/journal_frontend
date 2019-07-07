@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 import {postSignup} from '../adapter/UserAdapter.js'
 
@@ -19,6 +20,7 @@ class Signup extends Component {
   handleSubmit = e => {
     e.preventDefault()
     this.props.postSignup(this.state)
+    this.props.history.push('/journal')
   }
 
   render() {
@@ -33,4 +35,4 @@ class Signup extends Component {
   }
 }
 
-export default connect(null, {postSignup})(Signup)
+export default withRouter(connect(null, {postSignup})(Signup))

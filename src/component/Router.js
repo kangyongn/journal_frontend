@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 
 import Login from './Login.js';
 import Signup from './Signup.js';
+import Journal from '../container/Journal.js';
 import JournalNew from './JournalNew.js';
 
 const Router = () => {
@@ -10,7 +11,8 @@ const Router = () => {
     <Switch>
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
-      <Route path='/new-journal' component={JournalNew}/>
+      <Route path='/journal' component={Journal}/>
+      <Route path='/new' component={JournalNew}/>
     </Switch>
   )
 }
