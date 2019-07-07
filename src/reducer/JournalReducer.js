@@ -14,6 +14,9 @@ const journalReducer = (state = initialState, action) => {
         all: action.payload
       }
 
+    case 'REMOVE_JOURNALS_FROM_STATE':
+      return initialState
+
     default:
       return state
   }

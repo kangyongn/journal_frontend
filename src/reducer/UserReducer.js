@@ -18,6 +18,7 @@ const userReducer = (state = initialState, action) => {
       }
 
     case 'REMOVE_USER_FROM_STATE':
+      localStorage.clear()
       return initialState
 
     default:
