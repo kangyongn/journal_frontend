@@ -9,3 +9,7 @@ export const saveJournalsToState = journals => {
 export const removeJournalsFromState = () => {
   return {type: 'REMOVE_JOURNALS_FROM_STATE'}
 }
+
+export const editJournalInState = journal => {
+  return {type: 'EDIT_JOURNAL_IN_STATE', payload: journal}
+}

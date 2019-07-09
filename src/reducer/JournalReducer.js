@@ -17,6 +17,18 @@ const journalReducer = (state = initialState, action) => {
     case 'REMOVE_JOURNALS_FROM_STATE':
       return initialState
 
+    case 'EDIT_JOURNAL_IN_STATE':
+      const editedJournals = state.all.map(journal => {
+        if(journal.id === action.payload.id) {
+          return action.payload
+        } else {
+          return journal
+        }
+      })
+      return {
+        all: editedJournals
+      }
+
     default:
       return state
   }

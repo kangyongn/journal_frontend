@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import JournalView from '../component/JournalView.js';
+import JournalShow from '../component/JournalShow.js';
 
 const Journal = props => {
   const mapJournals = props.all.map(journal => {
     return (
-      <JournalView content={journal.content}/>
+      <JournalShow journal={journal}/>
     )
   })
 

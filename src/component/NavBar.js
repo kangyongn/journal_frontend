@@ -18,6 +18,7 @@ const NavBar = props => {
   const user = () => {
     return (
       <React.Fragment>
+        <NavLink to='/journal'>journal</NavLink>
         <NavLink to='/new'>new journal</NavLink>
         <NavLink to='/' onClick={(e) => {props.removeUserFromState(); props.removeJournalsFromState()}}>exit</NavLink>
       </React.Fragment>

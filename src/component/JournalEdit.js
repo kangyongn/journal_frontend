@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
 
-import {postJournal} from '../adapter/JournalAdapter.js'
+import {patchJournal} from '../adapter/JournalAdapter.js';
 
-class JournalNew extends Component {
+class JournalEdit extends Component {
   state = {
     content: ''
   }
@@ -17,9 +16,8 @@ class JournalNew extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const journal = {user_id: this.props.id, ...this.state}
-    this.props.postJournal(journal)
-    this.props.history.push('/journal')
+    let content = this.props.journal.content + this.state.content
+    this.props.patchJournal(this.props.journal.id, content)
   }
 
   render() {
@@ -32,10 +30,4 @@ class JournalNew extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    id: state.user.id
-  }
-}
-
-export default withRouter(connect(mapStateToProps, {postJournal})(JournalNew))
+export default connect(null, {patchJournal})(JournalEdit);
