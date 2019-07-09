@@ -16,7 +16,7 @@ class JournalEdit extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    let content = this.props.journal.content + this.state.content
+    let content = this.props.journal.content + ' ' + this.state.content
     this.props.patchJournal(this.props.journal.id, content)
   }
 
