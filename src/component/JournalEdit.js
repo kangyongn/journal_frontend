@@ -16,8 +16,15 @@ class JournalEdit extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    let content = this.props.journal.content + ' ' + this.state.content
-    this.props.patchJournal(this.props.journal.id, content)
+    if(this.state.content) {
+      let content = this.props.journal.content + `\n` + this.state.content
+      this.props.patchJournal(this.props.journal.id, content)
+      this.setState({
+        content: ''
+      })
+    } else {
+      alert('empty field')
+    }
   }
 
   render() {
@@ -25,6 +32,7 @@ class JournalEdit extends Component {
       <form onSubmit={this.handleSubmit}>
         <input type='text' name='content' placeholder='content' value={this.state.content} onChange={this.handleChange}/>
         <button>submit</button>
+        <button onClick={this.props.handleClick}>cancel</button>
       </form>
     )
   }
