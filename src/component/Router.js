@@ -13,6 +13,7 @@ const Router = () => {
       <Route path='/signup' component={Signup}/>
       <Route path='/journal' component={Journal}/>
       <Route path='/new' component={JournalNew}/>
+      <Route path='/show' />
     </Switch>
   )
 }
